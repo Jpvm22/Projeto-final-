@@ -1,0 +1,426 @@
+:root {
+    --bg-dark: #0f1519; /* Fundo escuro principal */
+    --text-light: #e0e6e9; /* Texto claro principal */
+    --accent-green: #38c172; /* Verde de destaque (Botões/Títulos) */
+    --accent-blue: #4a90e2; /* Azul de destaque (Links/Foco) */
+    --card-dark: #1a232b; /* Fundo de caixas/cards escuros */
+    --secondary-bg: #151e23; /* Fundo mais escuro para seções como o olhar indie */
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+/* Base e Tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Navegação (Header) --- */
+header {
+    background-color: var(--bg-dark); /* Fundo da barra de navegação igual ao fundo da página */
+    box-shadow: 0 2px 10px var(--shadow-dark);
+    border-bottom: 1px solid var(--secondary-bg); /* Borda sutil */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+nav .btn {
+    /* Botões sem borda nem fundo, como na imagem */
+    background: none;
+    border: none;
+    color: var(--text-light);
+    padding: 8px 15px;
+    margin-left: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    font-weight: 500;
+}
+
+nav .btn:hover {
+    color: var(--accent-green);
+    background-color: transparent;
+}
+
+.btn-exit {
+    /* Botão Sair com fundo verde */
+    background-color: var(--accent-green) !important;
+    color: var(--bg-dark) !important;
+    font-weight: 700;
+    margin-left: 20px !important;
+}
+
+.btn-exit:hover {
+    background-color: #5cb85c !important;
+}
+
+/* --- LAYOUT PRINCIPAL (info-grid) --- */
+.info-grid {
+    display: grid;
+    /* 3 linhas: main-content, side-box, secondary-info (coluna 2) */
+    grid-template-columns: 2fr 1.5fr; 
+    grid-template-rows: auto auto; 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.main-content {
+    background-color: var(--card-dark);
+    padding: 40px;
+    border-radius: 8px;
+    grid-column: 1 / 2; /* Coluna 1 */
+    grid-row: 1 / 2; /* Linha 1 */
+}
+
+.secondary-info {
+    background-color: var(--secondary-bg);
+    padding: 40px;
+    border-radius: 8px;
+    grid-column: 2 / 3; /* Coluna 2 */
+    grid-row: 1 / 3; /* Ocupa as duas linhas verticais */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side-box {
+    /* BLOCÃO "Por que eles importam?" */
+    background-color: var(--secondary-bg);
+    padding: 20px 40px;
+    border-radius: 8px;
+    grid-column: 1 / 2; /* Coluna 1 */
+    grid-row: 2 / 3; /* Linha 2 */
+    
+    border: 1px solid var(--accent-green); /* Borda verde suave */
+}
+
+/* --- Estilos de Texto e Detalhes --- */
+.subtitle-dot {
+    font-size: 0.85rem;
+    color: var(--accent-green);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.main-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.main-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #aebacd;
+    margin-bottom: 15px;
+}
+
+.reference {
+    font-size: 0.9rem;
+}
+
+.reference a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.side-box .subtitle {
+    /* Cor do título "Por que eles importam?" */
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 5px;
+    letter-spacing: normal;
+}
+
+/* --- Lista de Círculos (Secondary Info) --- */
+.secondary-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 0.95rem;
+    color: #aebacd;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.secondary-info ul {
+    list-style: none;
+}
+
+.secondary-info ul li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+.secondary-info ul li::before {
+    /* CRÍTICO: Estilo do Círculo com Número */
+    content: attr(data-number); 
+    position: absolute;
+    left: 0;
+    top: 0; 
+    font-size: 0.85rem;
+    font-weight: 700;
+    
+    color: var(--bg-dark); /* Texto escuro */
+    background-color: var(--accent-green); /* Fundo verde */
+    
+    border-radius: 50%;
+    width: 28px; 
+    height: 28px;
+    text-align: center;
+    line-height: 28px; 
+}
+
+.secondary-info ul li:nth-child(1)::before { content: '01'; }
+.secondary-info ul li:nth-child(2)::before { content: '02'; }
+.secondary-info ul li:nth-child(3)::before { content: '03'; }
+
+/* --- Seção de Estúdios (STUDIOS) --- */
+.studios {
+    margin-top: 50px;
+}
+
+.studios h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.studio-intro {
+    font-size: 1rem;
+    color: #aebacd;
+    margin-bottom: 30px;
+}
+
+.studio-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--card-dark);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-dark);
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent-blue);
+}
+
+.card h3 {
+    color: var(--accent-blue);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.card strong {
+    color: var(--accent-green);
+    display: block;
+    margin: 5px 0 10px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #aebacd;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #72a9e8;
+}
+
+/* --- Banner de CTA (Continue Explorando) --- */
+.cta-banner {
+    background-color: var(--secondary-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    border-radius: 8px;
+    margin-top: 60px;
+    border-top: 5px solid var(--accent-green);
+}
+
+.cta-banner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.cta-banner p {
+    color: #aebacd;
+    font-size: 0.95rem;
+}
+
+.cta-banner button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cta {
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    margin-left: 20px;
+}
+
+.btn-cta:hover {
+    background-color: #5cb85c;
+}
+
+.btn-cta-secondary {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    margin-left: 10px;
+}
+
+.btn-cta-secondary:hover {
+    background-color: #3b74b6;
+}
+
+/* --- Responsividade (Mantida) --- */
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+    .secondary-info {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+    .main-content {
+        grid-row: 1 / 2;
+    }
+    .side-box {
+        grid-row: 3 / 4;
+    }
+    .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cta-banner div {
+        margin-bottom: 20px;
+    }
+    .btn-cta, .btn-cta-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+/* --- Carrossel (Destaques) --- */
+.carrossel {
+    margin-top: 50px; /* Espaçamento superior */
+}
+
+.carrossel h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 15px;
+}
+
+.carousel-container {
+    overflow: hidden; /* CRÍTICO: ESCONDE TUDO QUE ESTÁ FORA DA ÁREA VISÍVEL */
+    position: relative;
+    width: 100%; /* Ocupa toda a largura disponível no main */
+    padding: 10px 0; /* Padding vertical, se desejar */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* CRÍTICO: A LARGURA TOTAL DO SLIDE DEVE SER O NÚMERO DE ITENS * 100% */
+    /* Você tem 4 itens no HTML, então: */
+    width: 400%; /* Ex: 4 itens * 100% = 400% */ 
+}
+
+.carousel-item {
+    /* CRÍTICO: CADA ITEM OCUPA UMA FRAÇÃO DA LARGURA TOTAL DO SLIDE */
+    /* Se o slide tem 400% e queremos 1 item por vez, cada item tem 100% / 4 = 25% */
+    width: 25%; /* Ex: 100% / número de itens */
+    flex-shrink: 0; /* Impede que os itens encolham */
+    background-color: var(--card-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-dark); /* Sombra mais escura */
+    text-align: center;
+    /* Transição para efeitos de hover, se houver */
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Opcional: Efeito de scale no hover */
+.carousel-item:hover {
+    transform: scale(1.02); 
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 650px; /* Aumentar a altura para ocupar mais espaço vertical */
+    object-fit: cover;
+    display: block;
+    /* border-bottom: none; ou remova a linha */
+}
+
+.carousel-item .caption {
+    padding: 15px 10px; /* Ajustar padding */
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1.1rem; /* Aumentar o tamanho da fonte */
+}

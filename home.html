@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Indie - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Universo Indie</h1>
+            <nav>
+                <button class="btn">Definição</button>
+                <button class="btn">Destaques</button>
+                <button class="btn">Links oficiais</button>
+                <button class="btn btn-exit" onclick="window.location.href='index.html'">Sair</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+       
+   
+       
+        <section class="info-grid">
+            <div class="main-content">
+                <p class="subtitle-dot">● O que é um jogo indie?</p>
+                <h2>Liberdade criativa e experiências autênticas</h2>
+                <p>Jogos indie são desenvolvidos por equipes pequenas ou criadores solo que atuam de forma independente de grandes publicadoras. Essa liberdade resulta em obras autorais, com foco em inovação, narrativas pessoais e mecânicas experimentais. A distribuição digital permite que esses projetos alcancem jogadores do mundo todo através de plataformas como Steam, GOG e lojas de consoles.</p>
+                <p class="reference">Referência: <a href="#">Blog 2 A.M. Gaming</a></p>
+            </div>
+        
+            <div class="secondary-info">
+                <h3>Experimente o olhar indie</h3>
+                <p class="intro-text">Visuais autorais, trilhas experimentais e mecânicas arriscadas conectam comunidades apaixonadas pela descoberta de novas ideias.</p>
+                <ul>
+                    <li>Narrativas pessoais e diversidade de temas.</li>
+                    <li>Comunidades engajadas na construção dos jogos.</li>
+                    <li>Experimentos mecânicos que renovam gêneros clássicos.</li>
+                </ul>
+            </div>
+            
+            <div class="side-box">
+                <p class="subtitle">Por que eles importam?</p>
+                <p>Ao priorizar histórias íntimas e mecânicas experimentais, jogos independentes expandem os limites da criatividade e inspiram toda a indústria.</p>
+            </div>
+        </section>
+       
+        <section class="carrossel">
+            <h2>Destaques de jogos</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div class="carousel-item">
+                        <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000000076/d78049b5e6bfc2b0a92237a5463910856bdb5a549773a68f60ea21c632ae7c63" alt="The Binding of Isaac">
+                        <p class="caption">The Binding of Isaac</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://deliriumnerd.com/wp-content/uploads/2016/12/f58978f175eba8065d1b5afe4545876d_original.jpg" alt="Undertale">
+                        <p class="caption">Undertale</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000001990/cd98a2abfb3daabf755ee6230142a01cf1b2f717d8831093545595280539f1eb" alt="Super Meat Boy">
+                        <p class="caption">Super Meat Boy</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch-2/70010000105526/75473d99ae0d87abda2bf0979c0886a78a1ec9debd46fa77b6c5f19b9c7ab175" alt="Hades 2">
+                        <p class="caption">Hades 2</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section class="studios">
+            <p class="subtitle-dot">● Estúdios independentes</p>
+            <h2>Conheça quem lidera o movimento</h2>
+            <p class="studio-intro">Cada estúdio abaixo ganhou destaque global com um jogo marcante que demonstra o poder da independência criativa.</p>
+            
+            <div class="studio-cards">
+                <div class="card">
+                    <h3>Team Cherry</h3>
+                    <p><strong>Hollow Knight (2017)</strong></p>
+                    <p>Metroidvania desenhado à mão explorando Hallownest e enfrentando insetos corrompidos e desvendando a queda do reino.</p>
+                    <a href="#" class="read-more">Veja mais sobre a empresa</a>
+                </div>
+                <div class="card">
+                    <h3>Supergiant Games</h3>
+                    <p><strong>Hades (2020)</strong></p>
+                    <p>Roguelike de ação narrativa onde Zagreus desafia o Submundo, recebendo bênçãos dos deuses olímpicos a cada tentativa de fuga.</p>
+                    <a href="#" class="read-more">Veja mais sobre a empresa</a>
+                </div>
+                <div class="card">
+                    <h3>Motion Twin</h3>
+                    <p><strong>Dead Cells (2018)</strong></p>
+                    <p>“Roguelvania” frenético com fases procedurais, combate preciso e evolução constante mesmo após cada morte.</p>
+                    <a href="#" class="read-more">Veja mais sobre a empresa</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-banner">
+            <div>
+                <h2>Continue explorando</h2>
+                <p>Visite a página de destaques para conhecer os jogos mais celebrados e avance para a seção de links oficiais para descobrir as plataformas de compra.</p>
+            </div>
+            <button class="btn btn-cta">Ver destaques</button>
+            <button class="btn btn-cta-secondary">Links oficiais</button>
+        </section>
+    
+     
+    </main>
+
+    <script>
+        const slide = document.querySelector('.carousel-slide');
+        const items = document.querySelectorAll('.carousel-item');
+        
+        let counter = 0;
+        // O valor de deslocamento é 100% dividido pelo número de itens (4 no seu caso).
+        const slidePercentage = 100 / items.length; // Isto dará 25%
+        
+        function moveCarousel() {
+            counter++;
+            const maxIndex = items.length; 
+        
+            // Se o contador chegar ao último índice, ele reinicia.
+            if (counter >= maxIndex) {
+                // Remove a transição para fazer o "pulo" de volta ao item 0 instantaneamente
+                slide.style.transition = 'none'; 
+                counter = 0;
+            }
+    
+            // Calcula o valor da transição (ex: 0 * 25, 1 * 25, 2 * 25, etc.)
+            const translateValue = -slidePercentage * counter; 
+        
+            slide.style.transform = 'translateX(' + translateValue + '%)';
+        
+            // Reativa a transição suave para o próximo movimento, após o reset
+            if (counter === 0) {
+                setTimeout(() => {
+                    slide.style.transition = 'transform 0.5s ease-in-out';
+                }, 50); 
+            }
+        }
+        
+        // Inicializa o carrossel para rodar a cada 3 segundos
+        setInterval(moveCarousel, 3000);
+    
+        // Ajuste inicial para garantir que o carrossel comece no item 0
+        window.addEventListener('load', () => {
+            slide.style.transform = 'translateX(0%)';
+        });
+    </script>
+</body>
+</html>
