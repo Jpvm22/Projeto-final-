@@ -1,0 +1,125 @@
+/* --- ESTILO PARA PÁGINA DE DESTAQUES --- */
+
+/* Ativa o botão de navegação atual */
+.btn-active {
+    color: var(--accent-green) !important;
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 5px; /* Para dar espaço à linha */
+    background-color: transparent !important;
+}
+
+/* Header da página de destaques */
+.page-header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #2c3e50); /* Cor de borda sutil */
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #aebacd;
+    font-size: 1rem;
+}
+
+
+/* Layout da Grade de Jogos */
+.game-grid {
+    display: grid;
+    /* Duas colunas de tamanho igual com espaçamento de 30px */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+}
+
+/* Estilização do Cartão de Jogo */
+.game-card {
+    background-color: var(--card-dark);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-green); /* Borda lateral verde */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--accent-blue); /* Muda a cor no hover */
+}
+
+.game-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.game-card p {
+    color: #aebacd;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.tag {
+    /* Estilo para a tag "INDIE ICÔNICO" */
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.source {
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.source a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-blue);
+}
+
+/* --- Seção Final de CTA de Links --- */
+.cta-links {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    border-top: 5px solid var(--accent-green);
+}
+
+.cta-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cta-links p {
+    color: #aebacd;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: #5cb85c;
+}
+
+/* --- Responsividade da Grade --- */
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* Volta para uma única coluna no mobile */
+    }
+}

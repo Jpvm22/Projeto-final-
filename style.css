@@ -125,9 +125,3 @@ body {
 .login-box button:hover {
     background-color: #36a46c;
 }
-
-.login-box .demo {
-    font-size: 12px;
-    color: #8b949e;
-    margin-top: 15px;
-}
